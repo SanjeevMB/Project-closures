@@ -4,8 +4,20 @@ function counterFactory() {
     // `decrement` should decrement the counter variable and return it.
 
 
-    let increment = (initialValue = 0) => ++initialValue;
-    let decrement = (initialValue = 0) => --initialValue;
+    let positiveCounter = 0;
+    let negativeCounter = 0;
+    let increment = () => {
+        let initialValue = positiveCounter;
+        initialValue++;
+        return initialValue;
+    }
+    let decrement = () => {
+        let initialValue = negativeCounter;
+        initialValue--;
+        return initialValue;
+    }
+
+
 
     return {increment: increment, decrement: decrement};
 }
