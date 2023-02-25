@@ -4,6 +4,8 @@ function callBack(args){
     return args;
 }
 
-let retrurnFunc = cacheFunction(callBack);
+let retrurnFunc = cacheFunction(callBack, 'args1', 'args2', 'args3', 'args4');
 
-console.log(retrurnFunc());
+let cacheStore = retrurnFunc('args5', 'args6')
+
+console.log(cacheStore);
