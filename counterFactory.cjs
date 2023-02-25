@@ -4,17 +4,14 @@ function counterFactory() {
     // `decrement` should decrement the counter variable and return it.
 
 
-    let positiveCounter = 0;
-    let negativeCounter = 0;
+    let counter = 0;
     let increment = () => {
-        let initialValue = positiveCounter;
-        initialValue++;
-        return initialValue;
+        counter = counter++;
+        return counter;
     }
     let decrement = () => {
-        let initialValue = negativeCounter;
-        initialValue--;
-        return initialValue;
+        counter = counter--;
+        return counter;
     }
 
 
