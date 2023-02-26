@@ -8,6 +8,9 @@ function cacheFunction(cb) {
     `cb` should only ever be invoked once for a given set of arguments. */
 
 
+    if(cb === undefined){
+        throw new Error('CallBack undefined');
+    }
     let lengths = arguments.length;
     let argumentsCache = { ...arguments };
     function innerFun() {
