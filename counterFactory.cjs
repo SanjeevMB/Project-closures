@@ -4,9 +4,9 @@ function counterFactory() {
     // `decrement` should decrement the counter variable and return it.
 
     let counter = 0;
-    let increment = () => counter++;
-    let decrement = () => counter--;
-    return {increment: increment, decrement: decrement};
+    let increment = () => counter += 1;
+    let decrement = () => counter -= 1;
+    return { increment: increment, decrement: decrement };
 }
 
 module.exports = counterFactory;
