@@ -3,19 +3,9 @@ function counterFactory() {
     // `increment` should increment a counter variable in closure scope and return it.
     // `decrement` should decrement the counter variable and return it.
 
-
     let counter = 0;
-    let increment = () => {
-        counter = counter++;
-        return counter;
-    }
-    let decrement = () => {
-        counter = counter--;
-        return counter;
-    }
-
-
-
+    let increment = () => counter++;
+    let decrement = () => counter--;
     return {increment: increment, decrement: decrement};
 }
 
