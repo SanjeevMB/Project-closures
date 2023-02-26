@@ -7,7 +7,7 @@ function limitFunctionCallCount(cb, limit) {
 
     if (cb === undefined || typeof cb !== 'function') {
         throw new Error('Either no callBack or not a function');
-    } else if (callLimit === undefined) {
+    } else if (limit === undefined) {
         throw new Error('No limit pass')
     }
     function returnedFun() {
