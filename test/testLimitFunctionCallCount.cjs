@@ -1,17 +1,11 @@
 let limitFunctionCallCount = require('../limitFunctionCallCount.cjs');
 
-let number = 7;
-
-let startPoint = 1;
-
-function callBackTableCalculator() {
-    let multiple = number * startPoint;
-    startPoint++;
-    return multiple;
+function callBack(args) {    
+    return args;
 }
 
-let outer = limitFunctionCallCount(callBackTableCalculator, 10);
+let returnedFun = limitFunctionCallCount(callBack);
 
-let result = outer();
+let result = returnedFun('Para1', 'Para2', 'Para3', 'Para4');
 
 console.log(result);
