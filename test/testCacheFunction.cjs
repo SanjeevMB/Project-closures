@@ -1,11 +1,11 @@
 let cacheFunction = require('../cacheFunction.cjs');
 
-function callBack(args){
+function callBack(args) {
     return args;
 }
 
-let retrurnFunc = cacheFunction(callBack, 'args1', 'args2', 'args3', 'args4');
+let retrurnFunc = cacheFunction(callBack);
 
-let cacheStore = retrurnFunc('args5', 'args6')
+let cacheStore = retrurnFunc()
 
 console.log(cacheStore);
