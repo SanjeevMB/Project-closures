@@ -13,10 +13,10 @@ function cacheFunction(cb) {
     }
     let argumentsCache = {};
     function innerFun(...argument) {
-        if (argumentsCache[argument] === undefined) {
+        if (argumentsCache[argument] === undefined){
             return argumentsCache[argument] = cb(...argument);
-        } else {
-            return argumentsCache[arguments];
+        }else{
+            return argumentsCache[argument];
         }
     }
     return innerFun;
