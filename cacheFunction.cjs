@@ -8,21 +8,16 @@ function cacheFunction(cb) {
     `cb` should only ever be invoked once for a given set of arguments. */
 
 
-    if(cb === undefined){
+    if (cb === undefined || typeof cb !== 'function') {
         throw new Error('CallBack undefined');
     }
-    let lengths = arguments.length;
-    let argumentsCache = { ...arguments };
-    function innerFun() {
-        for (let index = 0; index < arguments.length; index++) {
-            if (argumentsCache[arguments[index]]) {
-                continue;
-            } else {
-                argumentsCache[lengths] = cb(arguments[index]);
-                lengths++;
-            }
+    let argumentsCache = {};
+    function innerFun(...argument) {
+        if (argumentsCache[argument] === undefined) {
+            return argumentsCache[argument] = cb(...argument);
+        } else {
+            return argumentsCache[arguments];
         }
-        return argumentsCache;
     }
     return innerFun;
 }
